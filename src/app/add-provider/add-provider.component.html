@@ -1,0 +1,15 @@
+<h2 align="center">{{ titre }}</h2>
+<form #data="ngForm" (ngSubmit)="persistProvider(data.value)">
+  Name : <input ngModel class="form-control" name="name" /> 
+  Address :<input ngModel class="form-control" name="address" /> 
+  Email : <input ngModel class="form-control" name="email" />
+  <button
+    type="submit"
+    class="btn btn-primary"
+    value="Ajouter"
+    style="margin-top: 5px"
+  ><i class="fa fa-plus" aria-hidden="true"></i> Ajouter</button>
+  <h3>
+    Exemple Two way data binding Taper un mot : </h3><input type="text" [(ngModel)]="formation"/> {{formation}}
+  
+</form>

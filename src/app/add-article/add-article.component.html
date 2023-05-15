@@ -1,0 +1,19 @@
+<h2 align="center">{{ titre }}</h2>
+<form #data="ngForm" (ngSubmit)="persistArticle(data.value)">
+  Label : <input ngModel class="form-control" name="label" /> Picture :<input
+    ngModel
+    class="form-control"
+    name="picture"
+  />
+  Price : <input ngModel class="form-control" name="price" />
+  Provider : <input ngModel class="form-control" name="provider_id" />
+
+  <button
+    type="submit"
+    class="btn btn-primary"
+    value="Ajouter"
+    style="margin-top: 5px"
+  >
+    <i class="fa fa-plus" aria-hidden="true"></i> Ajouter
+  </button>
+</form>
