@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
 })
 export class RegistrationService {
   urlUsers = 'http://localhost:8090/users/';
-  //user: any;
+  
 
   constructor(private Http: HttpClient) {}
   createUser(user: any) {
