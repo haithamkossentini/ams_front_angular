@@ -5,27 +5,40 @@
       <a
         class="nav-item nav-link"
         routerLink="/listProvider"
+        *ngIf="loginService.isUserLoggedIn()"
         routerLinkActive="active"
-        >Liste</a
-      >
-      <a
+        >Liste</a>
+      <a 
         class="nav-item nav-link"
         routerLink="/listArticle"
+        *ngIf="loginService.isUserLoggedIn()"
         routerLinkActive="active"
-        >Liste des Articles</a
-      >
+        >Liste des Articles</a>
       <a
         class="nav-item nav-link"
         routerLink="/addProvider"
+        *ngIf="loginService.isUserLoggedIn()"
         routerLinkActive="active"
-        >Ajouter</a
-      >
+        >Ajouter</a>
+
+      <a
+        class="nav-item nav-link"
+        routerLink="/login"
+        *ngIf="!loginService.isUserLoggedIn()"
+        routerLinkActive="active"
+        >Login</a>
       <a
         class="nav-item nav-link"
         routerLink="/addArticle"
+        *ngIf="loginService.isUserLoggedIn()"
         routerLinkActive="active"
-        >Ajouter Article</a
-      >
+        >Ajouter Article</a>
+      <a
+        class="nav-item nav-link"
+        routerLink="/logout"
+        *ngIf="loginService.isUserLoggedIn()"
+        routerLinkActive="active"
+        >LogOut</a>
     </div>
   </div>
 </nav>

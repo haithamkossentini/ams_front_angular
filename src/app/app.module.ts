@@ -13,6 +13,9 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { ListArticleComponent } from './list-article/list-article.component';
 import { AddArticleComponent } from './add-article/add-article.component';
 import { UpdateArticleComponent } from './update-article/update-article.component';
+import { LoginComponent } from './login/login.component';
+import { LogoutComponent } from './logout/logout.component';
+import { RegistrationComponent } from './registration/registration.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +28,9 @@ import { UpdateArticleComponent } from './update-article/update-article.componen
     ListArticleComponent,
     AddArticleComponent,
     UpdateArticleComponent,
+    LoginComponent,
+    LogoutComponent,
+    RegistrationComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
   providers: [],
