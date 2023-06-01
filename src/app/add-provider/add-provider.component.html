@@ -1,8 +1,13 @@
 <h2 align="center">{{ titre }}</h2>
-<form #data="ngForm" (ngSubmit)="persistProvider(data.value)">
-  Name : <input ngModel class="form-control" name="name" /> 
-  Address :<input ngModel class="form-control" name="address" /> 
-  Email : <input ngModel class="form-control" name="email" />
+<form #data="ngForm" (ngSubmit)="persistProvider(data.value)" enctype="multipart/form-data">
+  Name: <input ngModel class="form-control" name="name" />
+  Address: <input ngModel class="form-control" name="address" />
+  Email: <input ngModel class="form-control" name="email" />
+  <div class="form-group">
+    <label for="providerImage">Provider Logo</label>
+    <input ngModel name="providerImage" class="form-control" placeholder="Image" type="file" (change)="onFileChanged($event)">
+  </div>
+  
   <button
     type="submit"
     class="btn btn-primary"
@@ -10,6 +15,7 @@
     style="margin-top: 5px"
   ><i class="fa fa-plus" aria-hidden="true"></i> Ajouter</button>
   <h3>
-    Exemple Two way data binding Taper un mot : </h3><input type="text" [(ngModel)]="formation"/> {{formation}}
+    Exemple Two-way data binding Taper un mot :</h3>
+  <input type="text" [(ngModel)]="formation" name="formation" /> {{ formation }}
   
 </form>

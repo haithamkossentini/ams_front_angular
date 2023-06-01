@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root',
 })
 export class ProviderService {
-  urlProviders = 'http://localhost:8090/providers/';
+  urlProviders = 'http://localhost:8090/providers/'
   //provider: any;
   basicToken:any = sessionStorage.getItem('basicToken');
   
@@ -28,12 +28,15 @@ export class ProviderService {
   }
 
   updateProvider(provider: any) {
+    const headers = new HttpHeaders({ Authorization: this.basicToken });
     return this.Http.put(this.urlProviders + provider['id'], provider);
   }
   // deleteProvider(myObj:any) {
   //   return this.Http.delete(this.urlProviders + '/' + myObj['id'], myObj);
   // }
   getProvider(id: any) {
-    return this.Http.get(this.urlProviders + id);
+    const headers = new HttpHeaders({ Authorization: this.basicToken });
+
+    return this.Http.get(this.urlProviders + id, { headers });
   }
 }

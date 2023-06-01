@@ -1,12 +1,21 @@
 <h2 align="center">{{ titre }}</h2>
 <form #data="ngForm" (ngSubmit)="persistArticle(data.value)">
-  Label : <input ngModel class="form-control" name="label" /> Picture :<input
+  Label : <input ngModel class="form-control" name="label" id="label" />
+   Picture :<input
     ngModel
     class="form-control"
     name="picture"
+    id="picture"
   />
-  Price : <input ngModel class="form-control" name="price" />
-  Provider : <input ngModel class="form-control" name="provider_id" />
+  Price : <input ngModel class="form-control" name="price" id="price" />
+  <div class="form-group">
+    <label for="providerId">Choisir un Provider</label>
+    <select class="form-control" ngModel name="providerId">
+        <option *ngFor="let provider of providers"  value="{{provider.id}}">{{provider.name}} </option>
+
+    </select>
+
+  </div>
 
   <button
     type="submit"

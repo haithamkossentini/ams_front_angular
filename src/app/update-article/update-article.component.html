@@ -6,4 +6,12 @@ Label : <input type="text" [(ngModel)]="label" class="form-control" /> Price
   [(ngModel)]="picture"
   class="form-control"
 />
+<div class="form-group">
+  <label for="providerId">Choisir un Provider</label>
+  <select class="form-control"  [(ngModel)]="provider">
+      <option *ngFor="let provider of providers"  value="{{provider.id}}">{{provider.name}} </option>
+
+  </select>
+
+</div>
 <button class="btn btn-success" (click)="updateArticle()">Mise à jour</button>

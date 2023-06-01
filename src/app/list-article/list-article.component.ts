@@ -8,6 +8,7 @@ import { Router } from '@angular/router';
 })
 export class ListArticleComponent implements OnInit {
   articles: any;
+  idProvider: any;
   constructor(private service: ArticleService, private router: Router) {}
   ngOnInit() {
     this.service.listArticles().subscribe((response) => {
@@ -16,7 +17,7 @@ export class ListArticleComponent implements OnInit {
   }
 
   deleteArticle(id: any) {
-    console.log(id);
+   // console.log(id);
     this.service.deleteArticle(id).subscribe((response) => {
       console.log(response);
       this.refreshListArticles();
@@ -28,6 +29,6 @@ export class ListArticleComponent implements OnInit {
     });
   }
   updateArticle(id: any) {
-    this.router.navigate(['updateArticle' + '/' + id]);
+    this.router.navigate(['updateArticle' + '/'+id ]);
   }
 }
