@@ -9,10 +9,19 @@ import { Router } from '@angular/router';
 })
 export class RegistrationComponent {
   constructor(private service: RegistrationService, private router: Router) {}
-  persistUser(data: any) {
-    console.log(data);
-    this.service
-      .createUser(data)
-      .subscribe((data) => this.router.navigate(['/login']));
+  // persistUser(data: any) {
+  //   console.log(data);
+  //   this.service
+  //     .createUser(data)
+  //     .subscribe((data) => this.router.navigate(['/login']));
+  // }
+  createUser(myform:any){
+    this.service.createUser(myform).subscribe(
+      response => {
+        console.log(response);
+        alert("Inscription avec succes!")
+        this.router.navigate(['login']);
+      }
+    );
   }
 }

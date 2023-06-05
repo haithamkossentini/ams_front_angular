@@ -1,3 +1,4 @@
+import { TokenInterceptorService } from './services/token-interceptor-service.service';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -7,7 +8,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { AddProviderComponent } from './add-provider/add-provider.component';
 import { ListProviderComponent } from './list-provider/list-provider.component';
 import { UpdateProviderComponent } from './update-provider/update-provider.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { ListArticleComponent } from './list-article/list-article.component';
@@ -33,7 +34,7 @@ import { RegistrationComponent } from './registration/registration.component';
     RegistrationComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
-  providers: [],
+  providers: [{ provide: HTTP_INTERCEPTORS, useClass: TokenInterceptorService, multi: true }],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

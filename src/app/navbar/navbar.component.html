@@ -2,43 +2,23 @@
   <a class="navbar-brand" href="#">Providers</a>
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
     <div class="navbar-nav">
-      <a
-        class="nav-item nav-link"
-        routerLink="/listProvider"
-        *ngIf="loginService.isUserLoggedIn()"
-        routerLinkActive="active"
-        >Liste</a>
-      <a 
-        class="nav-item nav-link"
-        routerLink="/listArticle"
-        *ngIf="loginService.isUserLoggedIn()"
-        routerLinkActive="active"
-        >Liste des Articles</a>
-      <a
-        class="nav-item nav-link"
-        routerLink="/addProvider"
-        *ngIf="loginService.isUserLoggedIn()"
-        routerLinkActive="active"
-        >Ajouter</a>
+      <a class="nav-item nav-link" routerLink="/listProvider" *ngIf="loginService.isUserLoggedIn()"
+        routerLinkActive="active">Liste</a>
+      <a class="nav-item nav-link" routerLink="/listArticle" *ngIf="loginService.isUserLoggedIn()"
+        routerLinkActive="active">Liste des Articles</a>
+      <a class="nav-item nav-link" routerLink="/addProvider" *ngIf="loginService.isUserLoggedIn()"
+        routerLinkActive="active">Ajouter</a>
 
-      <a
-        class="nav-item nav-link"
-        routerLink="/login"
-        *ngIf="!loginService.isUserLoggedIn()"
-        routerLinkActive="active"
-        >Login</a>
-      <a
-        class="nav-item nav-link"
-        routerLink="/addArticle"
-        *ngIf="loginService.isUserLoggedIn()"
-        routerLinkActive="active"
-        >Ajouter Article</a>
-      <a
-        class="nav-item nav-link"
-        routerLink="/logout"
-        *ngIf="loginService.isUserLoggedIn()"
-        routerLinkActive="active"
-        >LogOut</a>
+      <a class="nav-item nav-link" routerLink="/login" *ngIf="!loginService.isUserLoggedIn()"
+        routerLinkActive="active">Login</a>
+      <a class="nav-item nav-link" routerLink="/addArticle" *ngIf="loginService.isUserLoggedIn()"
+        routerLinkActive="active">Ajouter Article</a>
+      <a class="nav-item nav-link" routerLink="/logout" *ngIf="loginService.isUserLoggedIn()"
+        routerLinkActive="active">LogOut</a>
+      <a class="nav-item nav-link" routerLink="/registration" *ngIf="!loginService.isUserLoggedIn()"
+        routerLinkActive="active">Registration</a>
+      <span class="nav-item nav-link" style="padding-left: 700px" *ngIf="loginService.isUserLoggedIn()">
+        Logged user : {{ nom }} {{ prenom }}</span>
     </div>
   </div>
 </nav>

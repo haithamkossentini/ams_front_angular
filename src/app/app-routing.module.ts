@@ -20,7 +20,7 @@ const routes: Routes = [
   { path: 'addArticle', component: AddArticleComponent, canActivate: [AuthGaurdService] },
   { path: 'updateProvider/:id', component: UpdateProviderComponent, canActivate: [AuthGaurdService] },
   { path: 'updateArticle/:id', component: UpdateArticleComponent, canActivate: [AuthGaurdService] },
-  { path: 'register', component: RegistrationComponent },
+  { path: 'registration', component: RegistrationComponent },
   { path: 'login', component: LoginComponent },
   { path: 'logout', component: LogoutComponent, canActivate: [AuthGaurdService] },
   { path: '**', component: PageNotFoundComponent },

@@ -1,42 +1,43 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 @Injectable({
-  providedIn: 'root',
+  providedIn: 'root'
 })
 export class ProviderService {
-  urlProviders = 'http://localhost:8090/providers/'
-  //provider: any;
-  basicToken:any = sessionStorage.getItem('basicToken');
-  
-  /*username = sessionStorage.getItem('username');
-  password = sessionStorage.getItem('password');*/
-  constructor(private Http: HttpClient) {}
- /* listProviders() {
-    return this.Http.get(this.urlProviders);
-  }*/
+
+  urlProviders = 'http://127.0.0.1:8090/providers/';
+
+  //basicToken:any = sessionStorage.getItem('basicToken');
+
+  constructor(private Http: HttpClient) { }
   listProviders() {
-    const headers = new HttpHeaders({ Authorization: this.basicToken });
-    return this.Http.get(this.urlProviders , { headers });
+    //const headers = new HttpHeaders({ Authorization: this.basicToken});
+   // return this.Http.get(this.urlProviders, {headers});
+   return this.Http.get(this.urlProviders);
   }
+
   deleteProvider(idProvider: any) {
-    return this.Http.delete(this.urlProviders + idProvider);
+   // const headers = new HttpHeaders({ Authorization: this.basicToken});
+   // return this.Http.delete(this.urlProviders + idProvider, {headers})
+   return this.Http.delete(this.urlProviders + idProvider)
   }
-  createProvider(provider: any) {
-    const headers = new HttpHeaders({ Authorization: this.basicToken });
-    return this.Http.post(this.urlProviders, provider, { headers });
-  }
-
   updateProvider(provider: any) {
-    const headers = new HttpHeaders({ Authorization: this.basicToken });
-    return this.Http.put(this.urlProviders + provider['id'], provider);
+   // const headers = new HttpHeaders({ Authorization: this.basicToken});
+   // return this.Http.put(this.urlProviders + provider['id'], provider, {headers});
+   return this.Http.put(this.urlProviders + provider['id'], provider);
   }
-  // deleteProvider(myObj:any) {
-  //   return this.Http.delete(this.urlProviders + '/' + myObj['id'], myObj);
-  // }
-  getProvider(id: any) {
-    const headers = new HttpHeaders({ Authorization: this.basicToken });
 
-    return this.Http.get(this.urlProviders + id, { headers });
+
+  createProvider(provider: any) {
+   // const headers = new HttpHeaders({ Authorization: this.basicToken});
+   //return this.Http.post(this.urlProviders, provider, {headers});
+    return this.Http.post(this.urlProviders, provider);
+  }
+
+
+  getProvider(id: any) {
+   // const headers = new HttpHeaders({ Authorization: this.basicToken});
+   //return this.Http.get(this.urlProviders + id, {headers})
+    return this.Http.get(this.urlProviders + id)
   }
 }
